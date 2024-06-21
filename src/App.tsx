@@ -9,13 +9,8 @@ function App() {
       return <div>Loading...</div>;
     }
     if (error !== null) {
-      return (
-        <div>
-          {error.name}: {error.message}
-        </div>
-      );
+      return <div>{error}</div>;
     }
-
     if (isSuccess) {
       return <div>{data}</div>;
     } else {
@@ -26,7 +21,7 @@ function App() {
   return (
     <div>
       <h1>useRequest() hook</h1>
-      <form>
+      <div>
         <input
           type='text'
           name='url'
@@ -34,7 +29,7 @@ function App() {
           value={url}
           onChange={(event) => setUrl(event.target.value)}
         />
-      </form>
+      </div>
       <div>
         <h1>Data</h1>
         <ShowData />
